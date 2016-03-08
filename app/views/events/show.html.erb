@@ -1,34 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="alert alert-info text-center">
+      <h1> <%= @event.title %>   <span class="label label-default"><%= @event.genre_id %></span></h1>
+    </div>
+    <div class="text-center">
+      <span class="fa fa-bold fa-calendar icon-bold"></span>
+      <span class="bold"><%= @event.date %></span>
+    </div>
+  <div class="text-center row">
+    <%= @event.description %>
+  </div>
+  <div class="text-center row">
+    <span class="fa fa-bold fa-mobile"> <%= @event.organizer_phone %></span>
+  </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+  <div> Organized by :
+    <span class="text-center"> <%= User.find(@event.organizer_id).name %></span>
+    <%= image_tag User.find(@event.organizer_id).image_url, alt: User.find(@event.organizer_id).name %>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Venue latitude:</strong>
-  <%= @event.venue_latitude %>
-</p>
-
-<p>
-  <strong>Venue logitude:</strong>
-  <%= @event.venue_logitude %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @event.genre_id %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+</div>
 
 <%= button_to 'Participate to event', action: :participate, id: @event.id %>
 

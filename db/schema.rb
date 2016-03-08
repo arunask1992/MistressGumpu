@@ -20,8 +20,11 @@ ActiveRecord::Schema.define(version: 20160308070439) do
     t.float    "venue_logitude"
     t.string   "genre_id"
     t.text     "description"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "organizer_id"
+    t.string   "organizer_email"
+    t.string   "organizer_phone"
   end
 
   create_table "genres", force: :cascade do |t|

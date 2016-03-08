@@ -73,16 +73,13 @@ class EventsController < ApplicationController
   def participate
     participation = Participation.find_or_create_by(event_id: @event.id, participant_id: current_user.id)
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'You are successfully registered for the event' }
+      format.html { redirect_to root_url, notice: 'You are successfully registered for the event' }
       format.json { head :no_content }
     end
   end
 
   def fetch_my_events
-  	# participant = current_user();
-  	# participations = Participation.where(participant_id: participant.uid);
-  	@user = User.new;
-  	participations = Participation.where(participant_id: 100);
+  	participations = Participation.where(participant_id: current_user.id)
   	event_ids = participations.map{|participation| participation.event_id};
   	@my_events = Event.where(id: event_ids).to_json;
   	respond_to do |format|	
