@@ -22,6 +22,7 @@
             <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
             <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
             <li><%= link_to 'My Events', my_events_path, id: "my_events_nav_item", class: "my_events_nav_item", method: :get %></li>
+            <li><%= link_to 'Add a new Event', new_event_path, id: "my_events_nav_item1", class: "my_events_nav_item1", method: :get %></li>
           </ul>
       <% else %>
           <ul class="nav navbar-nav">
