@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :participations
-  resources :events
+  resources :events do
+    collection do
+      post 'filter_events_by_genre'
+    end
+  end
   get 'home/index'
   root to: 'home#index'
   get '/auth/:provider/callback', to: 'session#create'

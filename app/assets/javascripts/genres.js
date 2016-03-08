@@ -7,7 +7,7 @@ initSearch = function() {
         allow_single_deselect: true,
         no_results_text: 'No genres found',
         search_contains: true,
-        width: "700px"
+        width: "600px"
     };
 
     $('.chosen-select').chosen(defaultOptions);
