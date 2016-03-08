@@ -61,12 +61,18 @@ class EventsController < ApplicationController
     end
   end
 
-  def fetch_my_events
-	  render :my_events
+  def filter_events_by_genre
   end
 
-  def filter_events_by_genre
-
+  def fetch_my_events    
+  	current_user = current_user();
+  	participations = Participation.where(participant_id: current_user.uid);
+  	event_ids = participations.map(function(participation) {
+  		return participation.event_id;
+  		});
+  	my_events = Event.where(id: event_ids);
+  	p my_events;
+	render :my_events
   end
 
   private
