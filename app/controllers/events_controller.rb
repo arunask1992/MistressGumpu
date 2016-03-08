@@ -60,6 +60,11 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def fetch_my_events    
+	render :my_events
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -70,4 +75,5 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :date, :venue_latitude, :venue_logitude, :genre_id, :description)
     end
+
 end
