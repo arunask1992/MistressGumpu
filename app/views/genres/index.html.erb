@@ -1,8 +1,11 @@
 <div class="search-genres">
-  <%= select_tag 'genres',
-                 options_for_select(all_genres),
-                 include_blank: true,
-                 class: 'chosen-select genres-name',
-                 data: {placeholder: 'Select a genre'}
-  %>
+  <%= form_tag filter_events_by_genre_events_path, {id: 'search-genre-form'} do %>
+      <%= select_tag 'genres',
+                     options_for_select(all_genres),
+                     include_blank: true,
+                     class: 'chosen-select genres-name',
+                     data: {placeholder: 'Select a genre'}
+      %>
+      <%= button_tag 'Search events', class: 'btn btn-success search-button' %>
+  <% end %>
 </div>

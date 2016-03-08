@@ -61,8 +61,12 @@ class EventsController < ApplicationController
     end
   end
 
-  def fetch_my_events    
-	render :my_events
+  def fetch_my_events
+	  render :my_events
+  end
+
+  def filter_events_by_genre
+
   end
 
   private
