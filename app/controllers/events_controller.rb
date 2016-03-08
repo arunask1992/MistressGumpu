@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy,:participate]
 
   # GET /events
   # GET /events.json
@@ -75,6 +75,15 @@ class EventsController < ApplicationController
   	my_events = Event.where(id: event_ids);
   	p my_events;
 	render :my_events
+  end
+
+  def participate
+    participation = Participation.find_or_create_by(event_id: @event.id, participant_id: current_user.id)
+    respond_to do |format|
+      format.html { redirect_to events_url, notice: 'You are successfully registered for the event' }
+      format.json { head :no_content }
+    end
+
   end
 
   private
