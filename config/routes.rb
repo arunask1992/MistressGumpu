@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  get  'my_events', to: 'events#fetch_my_events'
+  get  'my_events', to: 'events#display_events_map'
+  get  'events_list', to: 'events#fetch_my_events'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

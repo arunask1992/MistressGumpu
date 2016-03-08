@@ -18,3 +18,7 @@ Event.create([
                   genre_id: 'Entertainment',
                   description: "Join together to watch the award winning film"},
              ])
+
+Participation.create([
+	{participant_id: 100, event_id: 1}
+])

@@ -66,14 +66,7 @@ class EventsController < ApplicationController
     @filtered_events = Event.where({genre_id: chosen_genre.pluck(:name)})
   end
 
-  def fetch_my_events    
-  	current_user = current_user();
-  	participations = Participation.where(participant_id: current_user.uid);
-  	event_ids = participations.map(function(participation) {
-  		return participation.event_id;
-  		});
-  	my_events = Event.where(id: event_ids);
-  	p my_events;
+  def display_events_map    
 	render :my_events
   end
 
@@ -83,7 +76,18 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'You are successfully registered for the event' }
       format.json { head :no_content }
     end
+  end
 
+  def fetch_my_events
+  	# participant = current_user();
+  	# participations = Participation.where(participant_id: participant.uid);
+  	@user = User.new;
+  	participations = Participation.where(participant_id: 100);
+  	event_ids = participations.map{|participation| participation.event_id};
+  	@my_events = Event.where(id: event_ids).to_json;
+  	respond_to do |format|	
+	  format.json { render json: @my_events }
+	end
   end
 
   private
