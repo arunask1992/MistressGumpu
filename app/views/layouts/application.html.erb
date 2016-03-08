@@ -14,7 +14,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to 'Mistress Gumpu', root_path, class: 'navbar-brand' %>
+      <%= link_to image_tag("logo.png", :border => 0), root_path, class: 'navbar-brand' %>
     </div>
     <div id="navbar">
       <ul>
@@ -28,12 +28,14 @@
               <ul class="nav navbar-nav">
                 <li><%= link_to 'Google+', '/auth/google_oauth2' %></li>
               </ul>
+          <% end %>
         </li>
         <li>
           <%= link_to 'My Events', my_events_path, id: "my_events_nav_item", class: "my_events_nav_item", method: :get %>
         </li>
-      <% end %>
+      </ul>
     </div>
+    <div class="divider"></div>
     <%= yield %>
   </div>
 </nav>

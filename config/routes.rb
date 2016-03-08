@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
   get 'home/index'
-  root to: 'home#index'
+  root to: 'genres#index'
   get '/auth/:provider/callback', to: 'session#create'
   delete '/logout', to: 'session#destroy'
   post 'participate_to_event/:id', to:'events#participate'
