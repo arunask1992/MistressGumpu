@@ -62,6 +62,8 @@ class EventsController < ApplicationController
   end
 
   def filter_events_by_genre
+    chosen_genre = Genre.where({name: params[:genres]})
+    @filtered_events = Event.where({genre_id: chosen_genre.pluck(:name)})
   end
 
   def fetch_my_events    

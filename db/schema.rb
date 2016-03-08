@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160308070439) do
     t.datetime "date"
     t.float    "venue_latitude"
     t.float    "venue_logitude"
-    t.integer  "genre_id"
+    t.string   "genre_id"
     t.text     "description"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false

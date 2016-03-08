@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :date
       t.float :venue_latitude
       t.float :venue_logitude
-      t.integer :genre_id
+      t.string :genre_id
       t.text :description
 
       t.timestamps null: false

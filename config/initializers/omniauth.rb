@@ -1,4 +1,4 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :google_oauth2, '290519712742-1tudfbofs9rrcq2ggpb65on2m4dt1qd2.apps.googleusercontent.com', 'ItQL1GNRa-0wLvM3HnhBC-qD',
+  provider :google_oauth2, '39437020531-tgcpd13vn7fmkscfled5o38id9bgbbso.apps.googleusercontent.com', 'C4chIlQ5_m0NEcmOxm9YCBfD',
   scope: 'profile', image_aspect_ratio: 'square', image_size: 48, access_type: 'online'
 end
