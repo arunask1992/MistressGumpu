@@ -1,5 +1,10 @@
 <% @filtered_events.each do |event| -%>
-    <%= link_to event_path(event.id), class: 'card' do %>
-        <h2 class="textLeft"><%= event.title %> </h2>
-    <% end %>
+    <div class="card">
+      <%= link_to event_path(event.id), class: 'card1' do %>
+          <div class="textLeft card-text"><%= event.title %> </div>
+      <% end %>
+      <div class="event-description">
+        <%= event.description %>
+      </div>
+    </div>
 <% end %>

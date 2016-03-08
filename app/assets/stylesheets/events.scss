@@ -2,7 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#eventsmap { 
-	height: 700px; 
-	width:100%;
+#eventsmap {
+  height: 700px;
+  width: 100%;
+}
+
+.event-description {
+  padding-top: 50px;
+}
+
+.card {
+  width: 25%;
+  float: left;
+  height: 200px;
+  background: #ffffff;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #d1d1d1;
+  margin: 0px 40px 40px 70px;
+}
+
+.card-text {
+  padding: 25px;
+  border-bottom: 1px solid #d1d1d1;
+  font-weight: bold;
+}
+
+.card:hover {
+  background-color: palegoldenrod;
+  color: darkgoldenrod;
 }

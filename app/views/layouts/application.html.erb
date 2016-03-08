@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>MistressGumpu</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -17,23 +17,17 @@
       <%= link_to image_tag("logo.png", :border => 0), root_path, class: 'navbar-brand' %>
     </div>
     <div id="navbar">
-      <ul>
-        <li>
-          <% if current_user %>
-              <ul class="nav navbar-nav pull-right">
-                <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-              </ul>
-          <% else %>
-              <ul class="nav navbar-nav">
-                <li><%= link_to 'Google+', '/auth/google_oauth2' %></li>
-              </ul>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to 'My Events', my_events_path, id: "my_events_nav_item", class: "my_events_nav_item", method: :get %>
-        </li>
-      </ul>
+      <% if current_user %>
+          <ul class="nav navbar-nav pull-right">
+            <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
+            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+            <li><%= link_to 'My Events', my_events_path, id: "my_events_nav_item", class: "my_events_nav_item", method: :get %></li>
+          </ul>
+      <% else %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Google+', '/auth/google_oauth2' %></li>
+          </ul>
+      <% end %>
     </div>
     <div class="divider"></div>
     <%= yield %>
