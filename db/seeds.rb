@@ -6,5 +6,10 @@ genres = Genre.create(
         {name: 'Spiritual Discourses'},
         {name: 'Art'},
         {name: 'Crafts'},
-        {name: 'French'}
+        {name: 'French'},
+        {name: 'Entertainment'}
     ])
+
+Event.create([
+	{title: "Watch A Movie - The Revenant", date: '2016-03-20 00:00:00', venue_latitude: 12.8847396, venue_logitude: 77.6417577, genre_id: 5, description: "Join together to watch the award winning film"},
+])
